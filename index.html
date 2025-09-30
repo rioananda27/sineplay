@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sineplay - Nonton Film dan Lainnya</title>
+  <link rel="icon" type="image/png" href="/Buzzplay+ Favicon.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Kepala Aplikasi -->
+  <header class="app-header">
+    <div class="left-section">
+      <!--Logo-->
+      <img src="/sineplay logo.png" alt="Logo Buzz Play" class="logo">
+      <span class="material-icons search" id="searchBtn">search</span>
+      <input type="text" id="searchInput" placeholder="Mau Nonton Apa Hari Ini?..." class="search-bar">
+      <!-- Navigasi Sebelah Logo-->
+
+    </div>
+    <div class="right-section">
+      <!-- Akun -->
+      <span class="material-icons account">account_circle</span>
+      <!-- Hamburger Menu -->
+      <div class="hamburger-wrapper">
+        <span id="hamburger" class="material-icons">menu</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="overlay" class="overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <div class="close-btn-wrapper">
+      <span id="closeSidebar" class="material-icons close-icon">close</span>
+    </div>
+    <ul>
+      <li><a href="/index.html">Akun Saya</a></li>
+      <li><a href="/Pages/Seri/seri.html">Daftar Tontonan</a></li>
+      <li><a href="/Pages/Film/Film.html">Langganan</a></li>
+      <li><a href="/Pages/Dokumenter/Dokumenter.html">Pengaturan</a></li>
+      <li><a href="/Pages/Berita/Berita.html">Riwayat</a></li>
+      <li><a href="/Pages/Shorts/Shorts.html">Keluar</a></li>
+    </ul>
+  </aside>
+<!--------------------------------------------------------------------------------------->
+  <section class="carousel">
+    <div class="slides-container">
+      <div class="slide active">
+        <div class="text">
+          <img src="/tj-removebg-preview (1).png" alt="Logo Buzz Play" class="logo-content">
+          <p>Serangkaian kejadian mengerikan terjadi kepada sebuah keluarga harmonis, setelah mereka pindah kerumah pedesaan mereka, di rhode island, Amerika Serikat. Untuk itu, sepasang Paranormal terkenal pada masa itu, Ed dan Lorraine Warren membantu keluarga tersebut terbebas dari ancaman entitas menakutkan.</p>
+          <h3>US • Horror • 2013 • 1H 52M</h3>
+            <div class="buttons">
+            <a href="/middle.html"><button class="detail-btn"><span class="material-icons">visibility</span>Detail</button></a>
+            <button class="icon-btn mylist-btn" aria-label="Tambahkan ke MyList"><span class="material-icons">bookmark_add</span>MyList</button>
+            </div>
+        </div>
+        <div class="image" style="background-image: url('https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/aQCCpAIdWAp6wyFgjMry4okwrZo.jpg');"></div>
+      </div>
+        <div class="slide">
+        <div class="text">
+          <img src="/TC2.png" alt="Logo Buzz Play" class="logo-content">
+          <p>Dibagian Utara London, yaitu Enfield tengah digemparkan oleh kejadian supranatural yang dialami oleh seorang ibu tunggal dan keempat anaknya. Kejadian-kejadian mengerikan terus terjadi hingga menarik perhatian sepasang Penyelidik Paranormal terkenal, Ed dan Lorraine Warren untuk menghentikan peristiwa mengerikan yang dialami keluarga itu.</p>
+          <h3>US • Horror • 2016 • 2H 14M</h3>
+            <div class="buttons">
+            <button class="detail-btn"><span class="material-icons">visibility</span>Detail</button>
+            <button class="icon-btn mylist-btn" aria-label="Tambahkan ke MyList"><span class="material-icons">bookmark_add</span>MyList</button>
+            </div>
+        </div>
+        <div class="image" style="background-image: url('https://image.tmdb.org/t/p/original/y8FqFYi4YKwQ2ZirtEzBwY95gQU.jpg');"></div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast-container"></div>
+
+    <div class="nav">
+      <button id="prev"><span class="material-icons">chevron_left</span></button>
+      <button id="next"><span class="material-icons">chevron_right</span></button>
+    </div>
+
+    <div class="dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+    </div>
+  </section>
+
+<!---------------------------------------------------------------------------------->
+  <section class="shimmer-loader-section">
+    <div class="shimmer-layout">
+      <div class="poster skeleton"></div>
+      <div class="info">
+        <div class="skeleton title"></div>
+        <div class="skeleton meta"></div>
+        <div class="skeleton synopsis"></div>
+      </div>
+    </div>
+  </section>
+<!-- ================= Sedang Tren ================= -->
+<section class="trending-section">
+  <h2>Sedang Tren</h2>
+  <div class="trending-container">
+
+    <div class="card">
+      <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/vFa3lJuIFnLja1zvK11dXhqPrJQ.jpg" alt="The Conjuring 2">
+    </div>
+    <div class="card">
+      <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/7CNCv9uhqdwK7Fv4bR4nmDysnd9.jpg" alt="Megan">
+    </div>
+    <div class="card">
+      <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/nzx10sca3arCeYBAomHan4Q6wa1.jpg" alt="Sinister">
+    </div>
+    <div class="card">
+      <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/7CNCv9uhqdwK7Fv4bR4nmDysnd9.jpg" alt="Megan">
+    </div>
+    <div class="card">
+      <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/nzx10sca3arCeYBAomHan4Q6wa1.jpg" alt="Sinister">
+    </div>
+    
+  </div>
+</section>
+
+<section class="top-artist-section">
+  <h2>Top Artist</h2>
+  <div class="artist-container">
+
+    <div class="artist-card">
+      <img src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/5Vs7huBmTKftwlsc2BPAntyaQYj.jpg" alt="Vera Farmiga">
+      <p>Vera Farmiga</p>
+    </div>
+    <div class="artist-card">
+      <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/A14lLCZYDhfYdBa0fFRpwMDiwRN.jpg" alt="Emma Watson">
+      <p>Emma Watson</p>
+    </div>
+    <div class="artist-card">
+      <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg" alt="Jason Statham">
+      <p>Jason Statham</p>
+    </div>
+    <div class="artist-card">
+      <img src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/9VYK7oxcqhjd5LAH6ZFJ3XzOlID.jpg" alt="Pedro Pascal">
+      <p>Pedro Pascal</p>
+    </div>
+    
+  </div>
+</section>
+
+<!-- ================= Film Terbaik ================= -->
+<section class="Film-section">
+  <h2>Film Terbaik</h2>
+  <div class="Film-container">
+
+    <div class="card">
+      <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/vFa3lJuIFnLja1zvK11dXhqPrJQ.jpg" alt="The Conjuring 2">
+    </div>
+    <div class="card">
+      <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/crX9rSg9EohybhkEe8iTQUCe55y.jpg" alt="The Ugly Stepsister">
+    </div>
+    <div class="card">
+      <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/xazWoLealQwEgqZ89MLZklLZD3k.jpg" alt="The Shinning">
+    </div>
+    <div class="card">
+      <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/7CNCv9uhqdwK7Fv4bR4nmDysnd9.jpg" alt="Megan">
+    </div>
+    <div class="card">
+      <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/nzx10sca3arCeYBAomHan4Q6wa1.jpg" alt="Sinister">
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= Footer ================= -->
+<footer class="footer">
+  <div class="footer-content">
+    <!-- KIRI -->
+    <div class="footer-info">
+      <img src="/sineplay logo.png" alt="Buzz Play+ Logo" class="footer-logo">
+
+      <p class="copyright"> PT. Indonesia Happy Selalu, © 2025 All Right Reserved</p>
+
+      <div class="social-icons">
+        <a href="https://wa.me/6281234567890" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/whatsapp.svg" alt="WA"></a>
+        <a href="https://instagram.com/buzzplay_plus" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg" alt="IG"></a>
+        <a href="https://youtube.com/@buzzplayplus" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/youtube.svg" alt="YT"></a>
+        <a href="https://facebook.com/buzzplayplus" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/facebook.svg" alt="FB"></a>
+        <a href="https://x.com/buzzplayplus" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/x.svg" alt="X/Twitter"></a>
+      </div>
+    </div>
+
+      <div class="footer-link">
+          <a href="#">Berlangganan</a> <a href="#">Pertanyaan Umum</a>
+          <a href="#">Syarat dan Kebijakan</a><a href="#">Pusat Bantuan</a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+  <script src="index.js"></script>
+  <script src="favorit.js"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  font-family: 'Hammersmith One', sans-serif;
+  overflow: hidden;
+  color: white;
+}
+
+/* Container Video */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: black;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: black;
+}
+
+/* ===========================
+   HEADER
+   =========================== */
+.video-header{
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+  color: white;
+  list-style-type: none;
+}
+
+.video-header .back-btn {
+  cursor: pointer;
+  font-size: 28px;
+  transition: transform 0.2s ease;
+  color: #fff;
+  list-style: none;
+}
+
+.back-btn a {
+  list-style: none;
+}
+
+.video-header .back-btn:hover {
+  transform: scale(1.2);
+}
+
+.video-header .video-title {
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+/* ===========================
+   CONTROLS
+   =========================== */
+.controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  padding: 10px 15px;
+  z-index: 10;
+}
+
+/* Progress bar */
+.progress-container {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 0 10px;
+}
+
+#progress {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: linear-gradient(to right, #fff 0%, #fff 0%, #555 0%, #555 100%);
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+}
+
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ff01e6, #60058f); /* warna pink/merah biar standout */
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+#progress::-webkit-slider-runnable-track {
+  height: 5px;
+  border-radius: 5px;
+}
+
+#progress::-moz-range-track {
+  height: 5px;
+  border-radius: 5px;
+  background: #555;
+}
+
+#progress::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ff01e6, #60058f);
+  cursor: pointer;
+}
+
+/* Row Controls */
+.controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #f1f1f1;
+}
+
+/* Control Buttons (Play, rewind, forward) */
+.control-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.control-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 20px;   /* area klik lebih besar */
+  height: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ikon material di dalam tombol utama */
+.control-buttons .material-icons {
+  font-size: 35px;  /* ukuran ikon play/rewind/forward */
+  color: white;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.control-buttons button:hover .material-icons {
+  transform: scale(1.01);
+  color: blanchedalmond;  /* warna highlight opsional */
+}
+
+/* Right Controls (Volume, subtitle, cast, fullscreen) */
+.right-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.right-controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 20px;   /* area klik lebih besar */
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-controls .material-icons {
+  font-size: 30px;  /* ukuran ikon kanan */
+  color: white ;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.right-controls button:hover .material-icons {
+  transform: scale(1.01);
+  color: blanchedalmond;
+}
+
+/* Bungkus waktu biar rapat */
+.time-display {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* jarak kecil antara current / slash / duration */
+  font-size: 14px;
+  color: white;
+}
+
+.volume-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.volume-slider-wrapper {
+  position: absolute;
+  bottom: 60px; /* jarak dari tombol */
+  left: 10px;
+  transform: translateX(-50%) translateY(20px);
+  background: linear-gradient(135deg, #2d0727, #231762);;
+  height: 130px;
+  width: 20px;
+  border-radius: 8px 8px 8px 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Aktif kalau ditekan */
+.volume-slider-wrapper.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(5%);
+}
+
+/* Slider */
+#volumeBar {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 0px;
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+
+/* Track */
+#volumeBar::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 4px;
+  margin-bottom: 80px;
+  margin-left: -60px;
+  margin-right: 45px;
+  background: linear-gradient(135deg, #ffff00, #ff0000);
+}
+#volumeBar::-moz-range-track {
+  height: 6px;
+  border-radius: 4px;
+  background: #777;
+}
+
+/* Thumb */
+#volumeBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #2d0727;
+  margin-top: -4px;
+}
+#volumeBar::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #2d0727;
+}

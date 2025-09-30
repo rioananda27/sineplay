@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Hindari scroll horizontal */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background:linear-gradient(180deg, #2d0727, #231762);;
+  color: white;
+}
+
+/*-------------------Header-------------------*/
+@media (max-width: 768px){
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 3px 15px;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1002;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+ height: 30px;
+ margin-right: 10px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-bar {
+  display: none;
+  background-color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 12px;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.hamburger-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 10px;
+}
+
+.material-icons.account,
+.material-icons.search {
+  font-size: 20px;
+}
+
+.material-icons.search:hover,
+.material-icons.account:hover {
+  color: #00bfff;
+}
+
+.hamburger-wrapper .material-icons {
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.hamburger-wrapper :hover {
+  color: #00bfff;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background:linear-gradient(120deg, #2d0727, #231762);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1002;
+  padding-top: 80px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 15px 25px;
+  border-bottom: 1px solid rgba(235, 226, 226, 0.164);
+}
+
+.sidebar li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+}
+
+.sidebar li a:hover {
+  color: #007BFF;
+}
+
+.sidebar.show {
+  transform: translateX(0);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #251660b9, #511149cd);;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.close-btn-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1003;
+}
+
+.close-icon {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+.close-icon:hover {
+  color: #00bfff;
+}
+
+.material-icons.header-icon {
+  font-size: 24px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero .bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* overlay hanya sekali */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(43, 2, 48, 0.418);
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 12%;
+  left: 5%;
+  color: #fff;
+  max-width: 600px;
+  z-index: 2; /* penting! biar di atas overlay */
+}
+
+.hero-content .logo-content {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.hero-content .description {
+  font-size: 12px;
+  font-family:'Hammersmith One';
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #f0f0f0;
+  max-width: 350px;
+}
+
+.hero-content .meta {
+  display: block;
+  font-size: 10px;
+  color: #aaa;
+  margin-bottom: 20px;
+  font-family: 'Poppins';
+}
+
+.hero-content .buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.hero-content .buttons button {
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  font-size: 10px;
+}
+
+.buttons button {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-size: 10px;
+}
+
+.detail-btn {
+  background: linear-gradient(135deg, #ff00e6, #60057f);
+  color: white;
+  border-radius: 5px;
+  width: 60px;
+  height: 40px;
+  border: none;
+  font-family: 'Hammersmith One', sans-serif;
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.icon-btn {
+  background: linear-gradient(135deg, #2d0727, #231762);
+  color: white;
+  border-radius: 5px;
+  margin-left: 5px;
+  width: 70px;
+  height: 40px;
+  border: none;
+  gap: 3px;
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.detail-btn:hover {
+  background: linear-gradient(180deg, #ff01e6, #60058f);
+}
+
+.icon-btn:hover {
+  background: linear-gradient(180deg, #451553, #4f1d4f);
+}
+
+.material-icons {
+  font-size: 15px;
+}
+
+/* Info Section */
+.movie-info {
+  background: none;
+  padding: 1px 20px 20px;
+  color: #fff;
+}
+
+.movie-info h3 {
+  margin: 20px 0 10px;
+  font-size: 1.5rem;
+  font-family: 'hammersmith one';
+  font-weight: normal;
+}
+
+.movie-info .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: 'League Spartan';
+}
+
+.movie-info .tags span {
+  background: #222;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background: linear-gradient(90deg, #200030, #300050);
+  color: #fff;
+  padding: 30px 15px;
+}
+
+.footer h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.footer .socials {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+
+.footer {
+  background:linear-gradient(135deg, #251660, #511149);
+  align-items: center;
+  color: white;
+  padding: 10px;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: -25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-link {
+  list-style-type:none;
+  font-size: 10px;
+}
+
+.footer-link a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-top: -50px;
+  margin-left: 10px;
+}
+
+.footer-link a:hover {
+  color: #00bfff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: -25px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* Bagian Copyright */
+.copyright {
+  margin-top: 20px;
+  text-align: center;
+  color: #cccccc99;
+  font-size: 13px;
+}
+}
+
+@media (max-width:350px){
+.copyright {
+  margin-top: 20px;
+  text-align: center;
+  color: #cccccc99;
+  font-size: 10px;
+}
+}
